@@ -1,13 +1,13 @@
 #!/usr/bin/env python
 
-def dopdf(savedfilesdata, prefixdata, filecountdata, namedata, timedata, satdata, anoxiaabsdata, anoxiaperdata):
+def dopdf(savedfilesdata, prefixdata, filecountdata, namedata, sentence_to_be_replaced_data):
 
     import os
     from shutil import copyfile
     import re
 
     # copy template
-    copyfile('util/empty.tex', 'summary.tex')
+    copyfile('util/empty_v2.tex', 'summary.tex')
 
     # ===================== TITLE =====================
 
@@ -19,10 +19,8 @@ def dopdf(savedfilesdata, prefixdata, filecountdata, namedata, timedata, satdata
         filedata = file.read()
     # replace string
     filedata = filedata.replace('titlestring', titlename)
-    filedata = filedata.replace('time2plot_sentence', 'Year plotted: ' + timedata)
-    filedata = filedata.replace('sat_sentence', 'Global SAT: ' + satdata + '$^\circ$C')
-    filedata = filedata.replace('anoxia_abs_sentence', 'Seafloor anoxic area: ' + anoxiaabsdata + ' Mkm$^2$')
-    filedata = filedata.replace('anoxia_per_sentence', 'Seafloor anoxic area percentage: ' + anoxiaperdata + ' \%')
+    filedata = filedata.replace('sentence_to_be_replaced', sentence_to_be_replaced_data)
+
     # write the file out again
     with open('summary.tex', 'w') as file:
         file.write(filedata)

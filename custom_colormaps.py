@@ -10,11 +10,14 @@ fzcmap2 = LinearSegmentedColormap.from_list("my_colormap", ((0,0.2,0.4),'slatebl
 # mpl.colors.to_rgba('red')
 fzcmap_alpha065 = LinearSegmentedColormap.from_list("my_colormap",(fakealpha((0,0.2,0.4),0.65), fakealpha((0.41568627450980394, 0.35294117647058826, 0.803921568627451),0.65), fakealpha((0.0, 1.0, 1.0),0.65), fakealpha((0.9803921568627451, 0.9215686274509803, 0.8431372549019608),0.65), fakealpha((1.0, 1.0, 0.0),0.65), fakealpha((1.0, 0.5490196078431373, 0.0),0.65), fakealpha((1.0, 0.0, 0.0),0.65), fakealpha((0.54,0,0),0.65)), N=256, gamma=1.0)
 
-fzcmap_alpha065_white_centered = LinearSegmentedColormap.from_list("my_colormap",(fakealpha((0,0.2,0.4),0.65), fakealpha((0.41568627450980394, 0.35294117647058826, 0.803921568627451),0.65), fakealpha((0.0, 1.0, 1.0),0.65), fakealpha((0.9803921568627451, 0.9215686274509803, 0.8431372549019608),0.65), 'w', fakealpha((1.0, 1.0, 0.0),0.65), fakealpha((1.0, 0.5490196078431373, 0.0),0.65), fakealpha((1.0, 0.0, 0.0),0.65), fakealpha((0.54,0,0),0.65)), N=256, gamma=1.0)
+fzcmap_alpha065_white_centered = LinearSegmentedColormap.from_list("my_colormap",(fakealpha((0,0.2,0.4),0.65), fakealpha((0.41568627450980394, 0.35294117647058826, 0.803921568627451),0.65), fakealpha((0.0, 1.0, 1.0),0.65), fakealpha((0.9803921568627451, 0.9215686274509803, 0.8431372549019608),0.65), 'w',fakealpha((1.0, 1.0, 0.0),0.65), fakealpha((1.0, 0.5490196078431373, 0.0),0.65), fakealpha((1.0, 0.0, 0.0),0.65), fakealpha((0.54,0,0),0.65)), N=256, gamma=1.0)
 
-fzcmap_alpha065_bluesonly = LinearSegmentedColormap.from_list("my_colormap",(fakealpha((0,0.2,0.4),0.65), fakealpha((0.41568627450980394, 0.35294117647058826, 0.803921568627451),0.65), fakealpha((0.0, 1.0, 1.0),0.65), fakealpha((0.9803921568627451, 0.9215686274509803, 0.8431372549019608),0.65)), N=256, gamma=1.0)
+bluesonly = LinearSegmentedColormap.from_list("my_colormap",(fakealpha((0,0.2,0.4),0.65), fakealpha((0.41568627450980394, 0.35294117647058826, 0.803921568627451),0.65), fakealpha((0.0, 1.0, 1.0),0.65), fakealpha((0.9803921568627451, 0.9215686274509803, 0.8431372549019608),0.65)), N=256, gamma=1.0)
+
+bluesonly2 = LinearSegmentedColormap.from_list("my_colormap",(fakealpha(mpl.colors.to_rgba('darkblue')[0:3],0.65), fakealpha((0.41568627450980394, 0.35294117647058826, 0.803921568627451),0.65), fakealpha((0.0, 1.0, 1.0),0.65), fakealpha((0.9803921568627451, 0.9215686274509803, 0.8431372549019608),0.65)), N=256, gamma=1.0)
 
 whitecmap = LinearSegmentedColormap.from_list("my_colormap", ('w', 'w'), N=256, gamma=1.0)
+blackcmap = LinearSegmentedColormap.from_list("my_colormap", ('k', 'k'), N=256, gamma=1.0)
 
 lightgreycmap = LinearSegmentedColormap.from_list("my_colormap", ('lightgrey', 'lightgrey'), N=256, gamma=1.0)
 lightgraycmap = lightgreycmap # alias
