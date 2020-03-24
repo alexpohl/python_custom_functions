@@ -1,7 +1,10 @@
 def geniemap(londata_edge, latdata_edge, zdata, cmapdata, levdata, tickdata, extendata, lowercolor, uppercolor, projdata, titledata, fnamedata, contourplotflag, londata, latdata, clevdata, lwdata, overlay_flag, overlay_zdata, overlay_cmapdata, outfmtdata):
 
+
+    nlon = np.shape(zdata)[1]
+    nlat = np.shape(zdata)[2]
     data_crs = ccrs.PlateCarree()
-    landseamask = np.full((36, 36), 1)
+    landseamask = np.full((nlon, nlat), 1)
     landseamask = np.ma.masked_where(zdata.mask==False, landseamask)
     norm = BoundaryNorm(levdata, ncolors=cmapdata.N, clip=False)
     fig =  plt.figure(figsize=(figXsize, figYsize))
