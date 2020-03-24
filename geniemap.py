@@ -1,8 +1,8 @@
 def geniemap(londata_edge, latdata_edge, zdata, cmapdata, levdata, tickdata, extendata, lowercolor, uppercolor, projdata, titledata, fnamedata, contourplotflag, londata, latdata, clevdata, lwdata, overlay_flag, overlay_zdata, overlay_cmapdata, outfmtdata):
 
 
-    nlon = np.shape(zdata)[1]
-    nlat = np.shape(zdata)[2]
+    nlon = np.shape(zdata)[0]
+    nlat = np.shape(zdata)[1]
     data_crs = ccrs.PlateCarree()
     landseamask = np.full((nlon, nlat), 1)
     landseamask = np.ma.masked_where(zdata.mask==False, landseamask)
