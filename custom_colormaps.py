@@ -2,8 +2,10 @@
 
 from matplotlib.colors import LinearSegmentedColormap
 
+# Pohl, A. et al. Quantifying the paleogeographic driver of Cretaceous carbonate platform development using paleoecological niche modeling. Palaeogeogr. Palaeoclimatol. Palaeoecol. 514, 222–232 (2019).
 fzcmap = LinearSegmentedColormap.from_list("my_colormap", ((0,0.2,0.4),(0,0.2,0.4),'slateblue','deepskyblue','aqua','antiquewhite','yellow','darkorange','red',(0.54,0,0),(0.54,0,0)), N=256, gamma=1.0)
 
+# reduced width of dark blue and dark red
 fzcmap2 = LinearSegmentedColormap.from_list("my_colormap", ((0,0.2,0.4),'slateblue','deepskyblue','aqua','antiquewhite','yellow','darkorange','red',(0.54,0,0)), N=256, gamma=1.0)
 
 # this requires fakealpha, which must be loaded before this function in scripts
